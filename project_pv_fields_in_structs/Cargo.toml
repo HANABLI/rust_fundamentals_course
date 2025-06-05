@@ -1,0 +1,6 @@
+[package]
+name = "project_pv_fields_in_structs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
