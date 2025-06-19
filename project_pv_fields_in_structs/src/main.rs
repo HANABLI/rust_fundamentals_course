@@ -1,6 +1,5 @@
 //! This module contains the configuration options for the application.
-//! 
-
+//!
 
 pub enum LogLevel {
     Debug,
@@ -12,7 +11,7 @@ pub enum LogLevel {
 pub enum LogOutput {
     Stdout,
     Stderr,
-    File(String)
+    File(String),
 }
 /// This struct contains the configuration options for controlling logging.
 /// # Exemples:

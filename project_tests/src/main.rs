@@ -1,4 +1,4 @@
-use std::io::{BufReader, BufRead};
+use std::io::{BufRead, BufReader};
 
 pub fn read_stdin() -> String {
     let stdin = std::io::stdin();
@@ -20,12 +20,12 @@ mod tests {
     use super::_read_stdin;
     use std::io::Cursor;
 
-    #[test] 
+    #[test]
     fn test_read_input() {
         let input = "Hello World!\n";
         let expected_output = "Hello World!";
         let mut reader = Cursor::new(input);
-        let output =  _read_stdin(&mut reader);
+        let output = _read_stdin(&mut reader);
         assert_eq!(output, expected_output);
     }
 
@@ -38,3 +38,5 @@ mod tests {
         assert_eq!(output, expected_output);
     }
 }
+
+fn main() {}

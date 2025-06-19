@@ -12,7 +12,7 @@ fn main() {
     for c in sentence.chars() {
         match c {
             'a' | 'e' | 'i' | 'o' | 'u' => println!("Got a vowel: {}!\n\r", c),
-            _=> continue, 
+            _ => continue,
         }
     }
 

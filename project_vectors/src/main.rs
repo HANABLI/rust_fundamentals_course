@@ -49,7 +49,7 @@ fn main() {
     println!("The vector v elements: {:?}", v);
 
     // extend adds each element of the given slice to the vector
-    let more_numbers = vec![5, 6];  
+    let more_numbers = vec![5, 6];
     v.extend(more_numbers);
     println!("Extended vector elements: {:?}", v);
     // append adds the given vector to the vector, requires the vector to be mutable

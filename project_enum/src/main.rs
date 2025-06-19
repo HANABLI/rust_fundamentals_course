@@ -1,6 +1,6 @@
 enum DiskType {
     SSD,
-    HDD
+    HDD,
 }
 
 #[derive(Debug)]
@@ -21,13 +21,13 @@ enum WineRegions {
 
 struct Wine {
     name: String,
-    region: WineRegions, // WineRegions is used as a type   
+    region: WineRegions, // WineRegions is used as a type
 }
 
 fn supported_regions(w: WineRegions) {
     match w {
         WineRegions::Rioja => println!("Rioja is supported"),
-        _=> println!("{:?} is not supported", w),
+        _ => println!("{:?} is not supported", w),
     }
 }
 
@@ -43,7 +43,7 @@ fn format_size(size: u64) -> String {
         0..=999 => FileSize::Bytes(size),
         1000..=999_999 => FileSize::Kilobytes(size / 1000),
         1_000_000..=999_999_999 => FileSize::Megabytes(size / 1_000_000),
-        _=> FileSize::Gigabytes(size / 1_000_000_000),
+        _ => FileSize::Gigabytes(size / 1_000_000_000),
     };
 
     match filesize {
@@ -52,7 +52,6 @@ fn format_size(size: u64) -> String {
         FileSize::Megabytes(mb) => format!("{:.2} MB", mb as f64 / 1000.0),
         FileSize::Gigabytes(gb) => format!("{:.2} GB", gb as f64 / 1000.0),
     }
-
 }
 
 fn main() {
@@ -71,7 +70,7 @@ fn main() {
 //         region: WineRegions::Tuscany,
 //     };
 //     println!("Wine_CM: {} from {:?}", wine_CM.name, wine_CM.region);
-//     println!("Wine_B: {} from {:?}", wine_B.name, wine_B.region); 
+//     println!("Wine_B: {} from {:?}", wine_B.name, wine_B.region);
 //     supported_regions(wine_CM.region);
 //     supported_regions(WineRegions::Rioja);
 // }

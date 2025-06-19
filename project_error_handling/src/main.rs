@@ -1,5 +1,5 @@
-use std::io::{BufReader, BufRead};
 use std::fs::File;
+use std::io::{BufRead, BufReader};
 
 fn main() {
     let file = File::open("non_existing_file.txt");
@@ -10,14 +10,12 @@ fn main() {
                 println!("{}", line.unwrap());
             }
         }
-        Err(error) => {
-            match error.kind() {
-                std::io::ErrorKind::NotFound => {
-                    panic!("File not found: {}", error)
-                }
-                _=> {
-                    panic!("Error opening file: {}", error)
-                }
+        Err(error) => match error.kind() {
+            std::io::ErrorKind::NotFound => {
+                panic!("File not found: {}", error)
+            }
+            _ => {
+                panic!("Error opening file: {}", error)
             }
         },
     };
